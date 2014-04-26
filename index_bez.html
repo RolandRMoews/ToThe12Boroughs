@@ -29,7 +29,7 @@ heading {font-weight:bold; font-size:28px; font-style: italic; text-transform:up
 </style>
 
 </head>
-<heading>Berlin intra-city migration</heading>
+<heading>Berlin intra-city migration 2007 + 2008</heading>
 
 <!--[if IE 6]>
   <div id="browser-error">
@@ -225,8 +225,12 @@ for (var i=0; i< going.length; i++) {
  saldo_array[i]=map.features[i].saldo;
 }
 saldo_array.sort(function(a,b){return a - b});
-max_saldo = saldo_array[saldo_array.length -1];
-min_saldo = saldo_array[0];
+var max_saldo = saldo_array[saldo_array.length -1];
+var min_saldo = saldo_array[0];
+var max_abs = Math.max(Math.abs(max_saldo), Math.abs(min_saldo));
+
+console.log(max_abs)
+
 
 // this doesn't do anything yet
 
@@ -658,19 +662,19 @@ g.append("svg:text")
 
 
 // Mappable-Logo
-g.append("svg:text")
-    .attr("x", 25)
-    .attr("y", 710)
-    .attr("class", "logo")
-    .attr("text-anchor", "left")
-    .attr("font-family", "Lora")
-    .attr("font-style", "italic")
-	.attr("font-size", "16px")
-	.attr("font-weight", "bold")
-	.attr("font-style", "italic")
-    .text("MAPPABLE.INFO")
-    .attr("cursor", "pointer")
-	.on("click", function() { window.open("http://mappable.info"); });
+//g.append("svg:text")
+//    .attr("x", 25)
+//    .attr("y", 710)
+//    .attr("class", "logo")
+//    .attr("text-anchor", "left")
+//    .attr("font-family", "Lora")
+//    .attr("font-style", "italic")
+//	.attr("font-size", "16px")
+//	.attr("font-weight", "bold")
+//	.attr("font-style", "italic")
+//    .text("MAPPABLE.INFO")
+//    .attr("cursor", "pointer")
+//	.on("click", function() { window.open("http://mappable.info"); });
 </script>
 </body>
 </html>
